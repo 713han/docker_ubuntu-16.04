@@ -4,8 +4,9 @@ MAINTAINER hanshuang@talk2yam.com
 ARG DEBIAN_FRONTEND=noninteractive
 
 RUN \
-  apt-get update && apt-get install --assume-yes apt-utils && \
-  apt-get install --assume-yes fail2ban
-
+  apt-get -y update && \
+  apt-get -y upgrade && \
+  apt-get install -y apt-utils && \
+  apt-get install -y fail2ban
 
 CMD ["run"]
