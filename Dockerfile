@@ -6,9 +6,10 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 RUN \
   apt-get -y update && \
-  apt-get -y upgrade && \
-  locale-gen en_US.utf8 && \
+  apt-get -y upgrade && \  
   apt-get install -y apt-utils && \
+  apt-get install -y curl wget telnet vim bzip2 locales && \
+  locale-gen en_US.utf8 && \
   apt-get install -y fail2ban
 
 ENV \
